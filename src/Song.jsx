@@ -122,7 +122,7 @@ const Song = () => {
           <div className="space-y-5 text-sm md:text-base leading-relaxed opacity-95">
             <p>This song always reminds me of you.</p>
 
-            <p>You feel like something soft I never want to lose.</p>
+            <p>You feel like a safe place I never want to lose.</p>
 
             <p className="pb-3 pt-3">
               Like Mitski said, “my love mine all mine” — and in every version
