@@ -28,12 +28,20 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className='w-full fixed bg-white' style={{ zIndex: 2 }}>
+    <div className='w-full fixed bg-white' style={{ zIndex: 50 }}>
       <div className='flex justify-between md:max-w-[1240px] h-20 mx-auto px-4 items-center text-black'>
         
-        <h1 className='w-full text-3xl font-bold cursor-pointer'>
-          <Link to={'Home'} smooth duration={500}></Link>
-        </h1>
+     <h1 className='w-full text-3xl font-bold cursor-pointer'>
+  <Link
+    to={'Home'}
+    smooth={true}
+    duration={500}
+    className='flex items-center gap-2'
+  >
+    {/* <span>Happy Birthday </span> */}
+    <span className='font-bold colorchange'>🎂</span>
+  </Link>
+</h1>
 
         <ul className='hidden md:flex whitespace-nowrap'>
           {navLinks.map(({ id, title }) => (

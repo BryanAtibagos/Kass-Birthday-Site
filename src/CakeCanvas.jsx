@@ -12,7 +12,7 @@ const CakeCanvas = () => {
       minPolarAngle={Math.PI / 3 }
       />
       <CakeModel scale={1.1} position={[0, -4.25, 0]}/>
-      <OrbitControls />
+
     </>
   );
 };

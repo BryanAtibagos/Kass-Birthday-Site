@@ -1,18 +1,30 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 import { photos } from "./data/data";
 
 
 const Pictures = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
+  useEffect(() => {
+    ScrollReveal({
+      mobile: false,
+      reset: false,
+      distance: "60px",
+      duration: 1500,
+    });
+    ScrollReveal().reveal('.pimages1', {delay:400, origin: 'bottom'})
+    ScrollReveal().reveal('.pimages2', {delay:500, origin: 'bottom'})
+    ScrollReveal().reveal('.pimages3', {delay:600, origin: 'bottom'})
+    ScrollReveal().reveal('.pimages4', {delay:700, origin: 'bottom'})
+    ScrollReveal().reveal('.main-title', {delay:500, origin: 'top'})
+  }, []);
   return (
     <section
-      name="Pictures"
-      className="w-full min-h-screen py-24 px-4 bg-pink-50"
+      name="Photobooth"
+      className="w-full min-h-screen py-24 px-4 bg-pink-50 images"
     >
       <div className="max-w-[1240px] mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 main-title">
           <h1 className="text-5xl font-bold text-pink-500">
             Photobooth Memories
           </h1>
@@ -22,12 +34,12 @@ const Pictures = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pimages">
           {photos.map((photo, index) => (
             <div
               key={index}
               onClick={() => setSelectedImage(photo.image)}
-              className="bg-white p-3 rounded-3xl shadow-xl hover:scale-105 duration-300 cursor-pointer"
+              className={`bg-white p-3 rounded-3xl shadow-xl hover:scale-105 duration-300 cursor-pointer ${photo.animation}`}
             >
               <img
                 src={photo.image}
@@ -46,7 +58,7 @@ const Pictures = () => {
       {selectedImage && (
         <div
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 "
         >
           <img
             src={selectedImage}

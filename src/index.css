@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 body {
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
@@ -128,3 +129,33 @@ code {
 .animate-spin-slow {
   animation: spin 4s linear infinite;
 }
+
+
+
+.colorchange {
+  margin-top: auto;
+  animation: changeBg 10s linear infinite;
+}
+
+@keyframes changeBg {
+  0%{
+    color: rgb(245, 92, 92);
+  }
+  20%{
+    color: rgb(240, 208, 139);
+  }
+  40%{
+    color: rgb(82, 204, 66);
+  }
+  60%{
+    color: rgb(63, 231, 217);
+  }
+  80%{
+    color: rgb(93, 76, 248);
+  }
+  100%{
+    color: rgb(206, 56, 243);
+  }
+}
+
+

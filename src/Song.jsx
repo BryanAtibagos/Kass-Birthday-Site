@@ -2,7 +2,18 @@ import { useState, useRef, useEffect } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 import myLove from "./assets/music/myLove.mp3";
 import kass from "./assets/kass.png";
+import ScrollReveal from "scrollreveal";
 const Song = () => {
+  useEffect(() => {
+    ScrollReveal({
+      mobile: false,
+      reset: false,
+      distance: "60px",
+      duration: 1500,
+    });
+    ScrollReveal().reveal('.song', {delay:400, origin: 'bottom'})
+  }, []);
+
   const audioRef = useRef(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -50,7 +61,7 @@ const Song = () => {
       name="Song"
       className="w-full min-h-screen flex items-center justify-center bg-[#ffffff] px-4"
     >
-      <div className="w-full max-w-5xl flex flex-col md:flex-row overflow-hidden rounded-3xl shadow-2xl">
+      <div className="w-full max-w-5xl flex flex-col md:flex-row overflow-hidden rounded-3xl shadow-2xl song">
         {/* LEFT - PLAYER (Spotify dark side) */}
         <div className="w-full md:w-1/2 bg-[#121212] text-white p-6 flex flex-col justify-center">
           {/* Album */}
