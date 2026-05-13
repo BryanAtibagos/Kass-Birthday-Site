@@ -161,6 +161,9 @@ code {
 
 
 .valentine-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
   background: linear-gradient(135deg, #ffd1dc, #ffe6f0, #fff0f5);
@@ -172,37 +175,29 @@ code {
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
 
+  z-index: 99999;
+
   opacity: 1;
   transition: opacity 0.8s ease;
 }
-
-.valentine-loader.fade-out {
-  opacity: 0;
+.valentine-loader h1 {
+  font-size: 2rem;
+  color: #ff4d6d;
+  margin-top: 10px;
 }
 
-.app-fade-in {
-  animation: appFade 0.8s ease forwards;
+.valentine-loader p {
+  color: #ff6b81;
+  margin-top: 5px;
 }
 
-@keyframes appFade {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* heart animation */
 .heart {
   font-size: 4rem;
-  animation: float 1.6s ease-in-out infinite;
+  animation: float 1.5s ease-in-out infinite;
 }
 
 @keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-18px) scale(1.1); }
+  50% { transform: translateY(-15px) scale(1.1); }
   100% { transform: translateY(0); }
 }

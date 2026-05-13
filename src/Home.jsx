@@ -6,18 +6,6 @@ import CanvasLoader from "./CanvasLoader";
 import ScrollReveal from "scrollreveal";
 
 function Light({ brightness, color }) {
-  useEffect(() => {
-    ScrollReveal({
-      mobile: false,
-      reset: false,
-      distance: "60px",
-      duration: 1500,
-    });
-
-    ScrollReveal().reveal(".3d", { delay: 200, origin: "left" });
-    ScrollReveal().reveal(".letter", { delay: 300, origin: "right" });
-    ScrollReveal().reveal(".bday", { delay: 300, origin: "top" });
-  }, []);
 
   return (
     <directionalLight
@@ -32,8 +20,23 @@ function Light({ brightness, color }) {
   );
 }
 
-function Home() {
-  const [openLetter, setOpenLetter] = useState(false);
+function Home({ startAnimation } ) {
+   const [openLetter, setOpenLetter] = useState(false);
+
+    useEffect(() => {
+      if (!startAnimation) return;
+
+      ScrollReveal({
+        mobile: false,
+        reset: false,
+        distance: "60px",
+        duration: 1500,
+      });
+
+      ScrollReveal().reveal(".3d", { delay: 200, origin: "left" });
+      ScrollReveal().reveal(".letter", { delay: 500, origin: "right" });
+      ScrollReveal().reveal(".bday", { delay: 500, origin: "top" });
+    }, [startAnimation]);
 
   return (
     <div name="Home">
