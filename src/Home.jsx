@@ -15,8 +15,8 @@ function Light({ brightness, color }) {
     });
 
     ScrollReveal().reveal(".3d", { delay: 200, origin: "left" });
-    ScrollReveal().reveal(".letter", { delay: 500, origin: "right" });
-    ScrollReveal().reveal(".bday", { delay: 500, origin: "top" });
+    ScrollReveal().reveal(".letter", { delay: 300, origin: "right" });
+    ScrollReveal().reveal(".bday", { delay: 300, origin: "top" });
   }, []);
 
   return (

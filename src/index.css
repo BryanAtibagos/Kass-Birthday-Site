@@ -160,3 +160,49 @@ code {
 }
 
 
+.valentine-loader {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #ffd1dc, #ffe6f0, #fff0f5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.valentine-loader.fade-out {
+  opacity: 0;
+}
+
+.app-fade-in {
+  animation: appFade 0.8s ease forwards;
+}
+
+@keyframes appFade {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* heart animation */
+.heart {
+  font-size: 4rem;
+  animation: float 1.6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px) scale(1.1); }
+  100% { transform: translateY(0); }
+}
